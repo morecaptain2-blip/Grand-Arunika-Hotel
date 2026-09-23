@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbyJElU5EZMHJjRysyQ2VSP88HxYLXx8bq9VtZ00QFpip4j_HEK3xm8pApUO4dPJhufi/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzXLVsRsKO7-eonGtFVCIJ8fkYRj3HNrkGjGawlx5QU79MToJp8vnvaZzrGlJzfjgI5Hg/exec";
 
 const form = document.getElementById("reservationForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -6,7 +6,7 @@ const submitBtn = document.getElementById("submitBtn");
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  if (API_URL === "https://script.google.com/macros/s/AKfycbyJElU5EZMHJjRysyQ2VSP88HxYLXx8bq9VtZ00QFpip4j_HEK3xm8pApUO4dPJhufi/exec") {
+  if (API_URL === "https://script.google.com/macros/s/AKfycbzXLVsRsKO7-eonGtFVCIJ8fkYRj3HNrkGjGawlx5QU79MToJp8vnvaZzrGlJzfjgI5Hg/exec") {
     alert("URL Apps Script belum dimasukkan ke script.js.");
     return;
   }
