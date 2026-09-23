@@ -1,10 +1,12 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbzXLVsRsKO7-eonGtFVCIJ8fkYRj3HNrkGjGawlx5QU79MToJp8vnvaZzrGlJzfjgI5Hg/exec";
 
 const form = document.getElementById("reservationForm");
-const submitBtn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
+  event.stopPropagation();
+
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   const data = {
     nama: document.getElementById("nama").value,
@@ -18,8 +20,10 @@ form.addEventListener("submit", async function (event) {
     notes: document.getElementById("notes").value
   };
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Mengirim...";
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Mengirim...";
+  }
 
   try {
     const response = await fetch(API_URL, {
@@ -39,13 +43,19 @@ form.addEventListener("submit", async function (event) {
     }
 
   } catch (error) {
-    console.error(error);
-    alert("Gagal mengirim reservasi. Cek URL Apps Script dan deployment.");
+    console.error("Reservation error:", error);
+    alert("Gagal mengirim reservasi. Silakan coba lagi.");
   }
 
-  submitBtn.disabled = false;
-  submitBtn.textContent = "Kirim Reservasi";
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Kirim Reservasi";
+  }
 });
+
+function closeModal() {
+  document.getElementById("successModal").style.display = "none";
+}
 
 
 function closeModal() {
