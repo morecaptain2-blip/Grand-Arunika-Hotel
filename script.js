@@ -11,7 +11,7 @@ Pastikan berakhir dengan /exec
 */
 
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbwdmvb3tXnkK2JT-EEkRTr6Eir1DBl0zmFmQ7v8Y5P0QtDbQKG2BXD7XzrUU0FOf8742Q/exec";
+  "https://script.google.com/macros/s/AKfycbyJElU5EZMHJjRysyQ2VSP88HxYLXx8bq9VtZ00QFpip4j_HEK3xm8pApUO4dPJhufi/exec";
 
 
 
