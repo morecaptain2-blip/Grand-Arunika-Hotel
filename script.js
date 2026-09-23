@@ -6,11 +6,6 @@ const submitBtn = document.getElementById("submitBtn");
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  if (API_URL === "https://script.google.com/macros/s/AKfycbzXLVsRsKO7-eonGtFVCIJ8fkYRj3HNrkGjGawlx5QU79MToJp8vnvaZzrGlJzfjgI5Hg/exec") {
-    alert("URL Apps Script belum dimasukkan ke script.js.");
-    return;
-  }
-
   const data = {
     nama: document.getElementById("nama").value,
     email: document.getElementById("email").value,
